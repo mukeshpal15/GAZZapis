@@ -14,7 +14,7 @@ from rest_framework.request import Request
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
 from rest_framework import status
-
+from .flutterutils import *
 '''
 class UserAPIView(generics.ListCreateAPIView):
 	search_fields = ['User_Email','User_Password']
@@ -134,6 +134,30 @@ def Login(request):
 		else:
 			data['response'] = "1"
 		return Response(data)
+
+@api_view(['POST',])
+def forgot_password(request):
+	if request.method=='POST':
+		e=request.POST['email']
+		data={}
+		try:
+
+			instance=useres.objects.filter(pk=e)
+			for i in instance:
+				e=i.email
+				p=i.password
+				break
+			n=sendmail(e,p)
+			if n==1:
+				data['Response']='Passwors is send'
+				return Response(data)
+			else:
+				data['Response']='Enter valid email ID'
+			return Response(data)
+
+		except:
+			data['Response']='Enter valid email ID'
+			return Response(data)
 
 
 
