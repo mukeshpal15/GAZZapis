@@ -126,14 +126,34 @@ def Login(request):
 
 		serializer = userLoginSerializer(data=request.data)
 		data={}
-		dat={}
 		if serializer.is_valid():
 			
-			dat['response'] = "0"
-			return Response(dat)
+			data['response'] = "0"
+			return Response(data)
 		else:
 			data['response'] = "1"
-		return Response(data)
+			return Response(data)
 
+@csrf_exempt
+@api_view(['POST',])
+def ForgotPasswordUser(request):
+	if request.method == 'POST':
+		serializer = ForgotPasswordUserSerializer(data=request.data)
+		data={}
+		if serializer.is_valid():
+			sub='GAZZ - Your Account Password'
+			msg='''Hi there!,
+Your account's password is,
 
+Password : '''+useres.password+'''
+
+Thanks & Regards,
+GAZZ APP'''
+			email = EmailMessage(sub, msg, to=[useres.email])
+			email.send()
+			data['response'] = "0"
+			return Response(data)
+		else:
+			data['response'] = "1"
+			return Response(data)
 

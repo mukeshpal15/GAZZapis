@@ -30,6 +30,7 @@ urlpatterns = [
 #    path('UpdateName/<str:pk>/', UpdateName.as_view()),
     path('Registration/',Registration),
     path('Login/', Login),
+    path('ForgotPasswordUser/', ForgotPasswordUser),
  #   path('usersLogin/', usersLogin),
 #    path('Userforgotpass/', Userforgotpass),
 #    path('update_user_detail/<str:pk>/', update_user_detail),

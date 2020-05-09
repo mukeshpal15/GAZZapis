@@ -47,12 +47,12 @@ class UseresSerializer(serializers.ModelSerializer):
         	data['response']="Successful"
         	return Response(data)
 
+class ForgotPasswordUserSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = useres
+		fields= ('email','password',)
+
 class userLoginSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = useres
 		fields= ('email', 'password',)
-
-
-		
-		
-			

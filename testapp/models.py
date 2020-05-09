@@ -24,7 +24,7 @@ class useres(models.Model):
 	phone_no=models.CharField(max_length=15, blank=True)
 	password=models.CharField(max_length=70)
 	img = models.ImageField(upload_to='user_pic', default='user_pic/icon.png')
-	Description=models.TextField(blank = True)
+	Description=models.TextField(blank = True, default='Add Your Description')
 	Social_link=models.CharField(max_length=300 ,blank=True)
 
 
