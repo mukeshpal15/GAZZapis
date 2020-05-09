@@ -5,13 +5,15 @@ from django.core.mail import BadHeaderError, send_mail
 
 def sendmail(e,p):
 	try:
-		subject='Mail From GAAZ'
-		msg= ''' Hello sir,
+		subject='GAZZ - Your Account Password'
+		msg= ''' Hi there!,
 
-		your Password is'''+p+''' 
+		Your account's password is,
+
+		your Password is : '''+p+''' 
 
 		Thanks & Regards
-		Shri Raj Property''' 
+		GAZZ APP''' 
 
 
 		email = EmailMessage(subject, msg, to=[e])

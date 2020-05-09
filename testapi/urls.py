@@ -30,7 +30,9 @@ urlpatterns = [
 #    path('UpdateName/<str:pk>/', UpdateName.as_view()),
     path('Registration/',Registration),
     path('Login/', Login),
-    path('forgot_password/', forgot_password),
+    path('ForgotPasswordUser/', ForgotPasswordUser),
+ #   path('usersLogin/', usersLogin),
+
 #    path('Userforgotpass/', Userforgotpass),
 #    path('update_user_detail/<str:pk>/', update_user_detail),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

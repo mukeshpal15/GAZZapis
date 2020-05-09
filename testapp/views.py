@@ -126,17 +126,17 @@ def Login(request):
 
 		serializer = userLoginSerializer(data=request.data)
 		data={}
-		dat={}
 		if serializer.is_valid():
 			
-			dat['response'] = "0"
-			return Response(dat)
+			data['response'] = "0"
+			return Response(data)
 		else:
 			data['response'] = "1"
-		return Response(data)
+			return Response(data)
+
 
 @api_view(['POST',])
-def forgot_password(request):
+def ForgotPasswordUser(request):
 	if request.method=='POST':
 		e=request.POST['email']
 		data={}
@@ -158,6 +158,4 @@ def forgot_password(request):
 		except:
 			data['Response']='Enter valid email ID'
 			return Response(data)
-
-
 
