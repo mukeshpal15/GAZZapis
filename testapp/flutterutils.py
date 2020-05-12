@@ -8,12 +8,12 @@ def sendmail(e,p):
 		subject='GAZZ - Your Account Password'
 		msg= ''' Hi there!,
 
-		Your account's password is,
+Your account's password is,
 
-		your Password is : '''+p+''' 
+Password : '''+p+''' 
 
-		Thanks & Regards
-		GAZZ APP''' 
+Thanks & Regards
+GAZZ APP''' 
 
 
 		email = EmailMessage(subject, msg, to=[e])
