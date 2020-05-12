@@ -159,3 +159,17 @@ def ForgotPasswordUser(request):
 			data['Response']='Enter valid email ID'
 			return Response(data)
 
+@csrf_exempt
+@api_view(['POST',])
+def VendorRegistration(request):
+	if request.method == 'POST':
+
+		serializer = VendorSerializer(data=request.data)
+		data={}
+		if serializer.is_valid():
+			serializer.save()
+			data['response'] = "1"
+			return Response(data)
+		else:
+			data['response'] = "0"
+		return Response(data)

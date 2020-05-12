@@ -24,17 +24,10 @@ from rest_framework.authtoken import views
 from testapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-#    path('users/', views.Userpost.as_view()),
- #   path('api/userList/',UserAPIView.as_view()),
- #   path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
-#    path('UpdateName/<str:pk>/', UpdateName.as_view()),
     path('Registration/',Registration),
     path('Login/', Login),
     path('ForgotPasswordUser/', ForgotPasswordUser),
- #   path('usersLogin/', usersLogin),
-
-#    path('Userforgotpass/', Userforgotpass),
-#    path('update_user_detail/<str:pk>/', update_user_detail),
+    path('VendorRegistration/', VendorRegistration),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
